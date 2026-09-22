@@ -8,7 +8,7 @@ print("Hello, Python!")
 print("这是我写下的第一行 Python 代码。")
 
 # 变量：Python 不需要声明类型，直接赋值就行
-language = "Python"
+language = "java"
 version = "3.13.15"
 
 print(f"我正在学 {language}，本机版本是 {version}")
