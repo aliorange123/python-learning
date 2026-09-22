@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境（每个项目一个，绝对不要提交）
+.venv/
+venv/
+env/
+ENV/
+
+# 密钥（API key 永远不要进 git）
+.env
+*.key
+
+# 打包
+build/
+dist/
+*.egg-info/
+
+# 测试与缓存
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 日志与临时文件
+*.log
+*.tmp
