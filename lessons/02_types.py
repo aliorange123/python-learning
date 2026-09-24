@@ -140,3 +140,9 @@ print(a)
 #
 # 三题都写出来了 → 第 2 课过关，告诉我，我批改并推送到 GitHub。
 # 有任何一题写不出来 → 不要往下走，把那题的代码重写一遍。
+print(0,"",[],None,False)
+print(bool(0),bool(""),bool([]),bool(None),bool(False))
+print(0 == "",0 == [],None == 0,False == 0)
+x = 12345
+print(len(x))
+print(len(str(x)))

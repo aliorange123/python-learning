@@ -7,12 +7,15 @@
 # 三题都写出来了 → 第 2 课过关，告诉我，我批改并推送到 GitHub。
 # 有任何一题写不出来 → 不要往下走，把那题的代码重写一遍。
 #   1. 两个变量分别存你的名字和年龄，用 f-string 打印一句介绍
-name = "aliorange123"
-age = 24
-print(f"我的名字是{name},年龄是{age}岁")
+#name = "aliorange123"
+#age = 24
+#print(f"我的名字是{name},年龄是{age}岁")
 #   2. 把字符串 "42" 转成整数，加 1，打印结果和它的类型
-a = int("42")
-a = a + 1
-print(a,type(a))
+##a = int("42")
+#a = a + 1
+#print(a,type(a))
 #   3. 用注释回答：为什么 0.1 + 0.2 不等于 0.3？
 # 因为根据二进制，在机器里是无限循环小数，机器存不下
+print(0, "", [], None, False)                              →
+print(bool(0), bool(""), bool([]), bool(None), bool(False))→
+print(0 == "", 0 == [], None == 0, False == 0)
