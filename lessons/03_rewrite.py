@@ -10,16 +10,21 @@
 
 
 # 1. 给定 s = "abcdefg"，用切片取出 "cde"
-
-
+s = "abcdefg"
+a = s[2:5]
+print(a)
 # 2. 用切片把 s 反转并打印
-
-
+b = s[::-1]
+print(b)
 # 3. 给一句带首尾空格的话，去掉首尾空格，打印它和它的长度
 #    提示：先用一个变量存那句话
-
-
+c = " what are you doing "
+d = c.strip()
+print(d)
+print(len(d))
 # 4. 把 3.14159 格式化成保留 3 位小数并打印
-
-
+e = 3.14159
+print(f"{e:.3f}")
 # 5. 给一个字符串，用 .count() 数出某个字符出现了几次
+a = "1215645"
+print(a.count("1"))
