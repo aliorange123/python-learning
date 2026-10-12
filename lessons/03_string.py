@@ -85,7 +85,9 @@ print(u)             # abc  ← 原来的没变！
 # 【练习 9】把 u 的首字母变成大写，结果存进新变量 v。
 #           打印 v 和 u，观察 u 有没有被改变。
 #           提示：字符串有个 .upper()、也有 .capitalize()
-
+v = u.capitalize()
+print(v)
+print(u)
 # ============================================================
 # 4. 常用方法
 # ============================================================
@@ -104,8 +106,15 @@ w = "  Hello, Python World  "
 #            w.find("Python")            "Python" 从第几位开始
 #            "Python" in w               w 里有没有 "Python"
 #
-#            ⚠️ 注意 len(w) 和 len(w.strip()) 不一样。想想为什么。
-
+#            ⚠️ 注意 len(w) 和 len(w.strip()) 不一样。想想为什么。空格也算字符
+print(len(w))
+print(w.strip())
+print(w.lower())
+print(w.upper())
+print(w.replace("World", "朋友"))
+print(w.count("l"))
+print(w.find("Python"))
+print("Python" in w)
 # 【练习 11】.strip() 有返回值，但它**不改变 w 本身**。
 #            写三行验证：
 #              print(w)
@@ -114,7 +123,9 @@ w = "  Hello, Python World  "
 #
 #            （`split` 和 `join` 挪到第 5 课了——它们一个**返回**列表、
 #              一个**接收**列表，而现在还没学列表。硬塞在这里只会卡住你。）
-
+print(w)
+print(w.strip())
+print(w)
 
 # ============================================================
 # 5. f-string 进阶：格式化
