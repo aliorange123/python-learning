@@ -15,15 +15,36 @@
 
 # 1. 先写 n = 7，然后用 if / elif / else 判断它是正数、负数还是零
 #    写完把 n 改成 -3 和 0 各跑一次，确认三条分支都能走到
-
+n = 7
+if n >0:
+    print("正数")
+elif n == 0:
+    print("零")
+else:
+    print("负数")
 
 # 2. 用 for + range 打印 1 到 20 里的所有奇数
-
+for i in range(1,21,2):
+    print(i)
 
 # 3. 用 for + if 打印 1 到 20 里所有能被 3 整除的数
-
+for i in range(1,21):
+    if i%3 == 0:
+        print(i)
 
 # 4. FizzBuzz（只打印 1 到 20）
-
+for i in range(1,21):
+    if i%3 ==0 and i%5 ==0:
+        print("FizzBuzz")
+    elif i%3 == 0:
+        print("Fizz")
+    elif i%5 == 0:
+        print("Buzz")
+    else:
+        print(i)
 
 # 5. 用 while 从 10 倒着数到 1
+i = 10
+while i >0:
+    print(i)
+    i -=1
