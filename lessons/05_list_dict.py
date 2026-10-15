@@ -48,21 +48,22 @@ print(len(fruits))      # len 也能用（还记得吗：len 是函数）
 
 # 【猜 1】切片能用在列表上吗？先猜，再运行：
 #         print(fruits[0:2])
-#         我猜：
-
+#         我猜：#可以
+print(fruits[0:2])
 # 【练习 2】打印 fruits 的最后一个元素（用负索引）
-
+print(fruits[-1])
 # 【练习 3】往列表末尾加一个 "orange"
 #           提示：fruits.append("orange")
 #           加完打印整个 fruits 看看
-
+fruits.append("orange")
+print(fruits)
 # 【练习 4】把 "banana" 换成 "pear"
 #           提示：fruits[1] = "pear"
-#
+fruits[1]="pear"
 # 【猜 5】⚠️ 这个很关键——先回答再试：
 #         第 3 课学过「字符串不能改」（u[0]="x" 会报错）。
 #         那**列表能改吗**？
-#         我猜：
+#         我猜：可以改
 #         然后动手试上面那个 fruits[1] = "pear"。结果如何？
 
 
@@ -73,24 +74,30 @@ print(len(fruits))      # len 也能用（还记得吗：len 是函数）
 nums = [3, 1, 4, 1, 5, 9, 2, 6]
 
 # 【练习 6】用 for 遍历 fruits，每个元素打印一行
+for i in fruits:
+    print(i)
 
 # 【练习 7】打印 nums 的：
 #            最大值    提示：max(nums)
 #            最小值    提示：min(nums)
 #            总和      提示：sum(nums)
 #            长度      提示：len(nums)
-
+print(max(nums))
+print(min(nums))
+print(sum(nums))
+print(len(nums))
 # 【练习 8】把 nums 从小到大排序并打印
 #           提示：nums.sort()   （直接改 nums 本身）
 #                 或 sorted(nums)（返回一个新的，不改原列表）
-#
+print(sorted(nums))
 # 【猜 9】先猜再试：
-#         print(nums.sort())     会打印出什么？
-#         为什么？（提示：想想第 3 课的 .strip() 和 M11）
+#         print(nums.sort())     会打印出什么？排列好的nums
+#         为什么？（提示：想想第 3 课的 .strip() 和 M11）因为已经将nums改变了
 
 # 【练习 10】判断 5 在不在 nums 里（提示：用 in）
 #            再判断 100 在不在
-
+print(5 in nums)
+print(100 in nums)
 
 # ============================================================
 # 3. 字典：用「名字」取值，不用「位置」
