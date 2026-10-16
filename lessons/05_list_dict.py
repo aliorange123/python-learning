@@ -104,7 +104,6 @@ print(100 in nums)
 # ============================================================
 # 列表靠位置（第 0 个、第 1 个）；
 # 字典靠名字（"name"、"age"）——所以不用记顺序。
-
 person = {"name": "orange", "age": 24, "city": "beijing"}
 
 print(person["name"])       # 用键取值
@@ -112,26 +111,29 @@ print(person["age"])
 
 # 【猜 11】如果取一个**不存在的键**呢？先猜再试：
 #          print(person["gender"])
-#          我猜：
-
+#          我猜：None
+#print(person["gender"])
 # 【练习 12】用 .get() 安全地取不存在的键：
-#            print(person.get("gender"))
+print(person.get("gender"))
 #            再试试带默认值：person.get("gender", "未填写")
 #            对比一下：为什么 .get() 不会报错？
-
+print(person.get("gender", "未填写"))
 # 【练习 13】加一对新的：person["major"] = "计算机"
 #            把 age 改成 25
 #            各打印一次看看
-
+person = {"name": "orange", "age": 25, "city": "beijing","major":"计算机"}
 # 【练习 14】打印所有**键**、所有**值**、所有**键值对**
 #            提示：.keys() / .values() / .items()
-
+print(person.keys())
+print(person.values())
+print(person.items())
 # 【练习 15】用 for 遍历 .items()，打印成这种形式：
 #              name -> orange
 #              age -> 25
 #              city -> beijing
 #            提示：for k, v in person.items():  ← 一次拿两个值
-
+for k, v in person.items():
+    print(f"{k} -> {v}")
 
 # ============================================================
 # 4. split / join ⚠️ 这两个是从第 3 课挪过来的
