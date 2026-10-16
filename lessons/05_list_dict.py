@@ -147,14 +147,18 @@ s = "the quick brown fox"
 #            words = s.split()
 #            打印 words，再看一眼它的类型（type）
 #            然后打印 words[0] 和 len(words)
-
-# 【猜 17】split() 括号里什么都不写，是拿什么当分隔符？
-#          那 split(",") 又是按什么切？
+words = s.split()
+print(type(words))
+print(words[0])
+print(len(words))
+# 【猜 17】split() 括号里什么都不写，是拿什么当分隔符？ 我猜是空格
+#          那 split(",") 又是按什么切？       ,切
 
 # 【练习 18】反过来，用 join 把列表拼成字符串：
-#            print(" ".join(["a", "b", "c"]))     ← 猜猜结果
-#            print("-".join(["a", "b", "c"]))     ← 再猜
-#
+#            print(" ".join(["a", "b", "c"]))     ← 猜猜结果  a b c
+#            print("-".join(["a", "b", "c"]))     ← 再猜     -a-b-c
+print(" ".join(["a", "b", "c"]))
+print("-".join(["a", "b", "c"]))
 #            ⚠️ 注意 join 的写法很怪：是**分隔符**.join(列表)，
 #               不是 列表.join(分隔符)。想清楚再写。
 
