@@ -169,23 +169,38 @@ print("-".join(["a", "b", "c"]))
 
 # 【练习 19】通讯录（字典套字典）：
 #
-#   contacts = {
-#       "alice": {"phone": "123", "city": "beijing"},
-#       "bob":   {"phone": "456", "city": "shanghai"},
-#   }
-#
 #   1. 打印 alice 的电话
 #   2. 给 bob 加一个 "email" 键
 #   3. 打印所有人的名字和城市
+#
+# ⚠️ 下面这个字典已经给你定义好了（是真代码，不是注释），
+#    你直接用它就行，不用再写一遍。
+#
+# ⚠️ 取值写法：**用方括号，不用点**
+#      contacts["alice"]["phone"]      ✅ 一层一层往里走
+#      contacts.alice.phone            ❌ 那是 JavaScript 的写法
 
+contacts = {
+    "alice": {"phone": "123", "city": "beijing"},
+    "bob":   {"phone": "456", "city": "shanghai"},
+}
+print(contacts["alice"]["phone"])
+contacts["bob"]["email"] = "bob@example.com"
+print(contacts["bob"]["email"])
+for name, info in contacts.items():
+    print(name,"->",info["city"])
 # 【练习 20】列表套字典：
 #
-#   books = [
-#       {"title": "三体", "year": 2006},
-#       {"title": "活着", "year": 1993},
-#   ]
-#
 #   用 for 遍历，打印成 "三体 (2006)" 这种格式
+#
+# ⚠️ 提示：f-string 里层取字典的值要用**单引号**
+#      f"{book['title']} ({book['year']})"      ✅
+#      f"{book["title"]} ({book["year"]})"      ❌ 引号打架
+
+books = [
+    {"title": "三体", "year": 2006},
+    {"title": "活着", "year": 1993},
+]
 
 # 【练习 21】（**较难，可以跳过**）找出 books 里年份最早的那本
 #            提示：先假设第一本最早，然后逐个比较
