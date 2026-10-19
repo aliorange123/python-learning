@@ -217,8 +217,22 @@ text = "the quick brown fox jumps over the lazy dog the fox"
 #   分四步走，每一步想清楚用哪个工具：
 #
 #   1. 把 text 转成小写，然后用 split() 切成单词列表
+words = text.lower()
+words = words.split()
+print(words)
+print(len(words))
 #   2. 建一个空字典 counts = {}
 #      遍历单词列表，统计每个词出现几次
+counts = {}
+
+for word in words:
+    if word in counts:
+        counts[word] = counts[word] + 1     
+    else:
+        counts[word] = 1       
+print(counts)             
+for word, count in counts.items():
+    print(word, count)
 #        提示：用 counts.get(word, 0) + 1
 #        或者：if word in counts: ... else: ...
 #   3. 遍历 counts.items()，按次数**从多到少**打印
