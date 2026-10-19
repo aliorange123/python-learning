@@ -201,7 +201,8 @@ books = [
     {"title": "三体", "year": 2006},
     {"title": "活着", "year": 1993},
 ]
-
+for book in books:
+    print(f"{book['title']} ({book['year']})")
 # 【练习 21】（**较难，可以跳过**）找出 books 里年份最早的那本
 #            提示：先假设第一本最早，然后逐个比较
 
