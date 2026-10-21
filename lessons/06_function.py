@@ -249,7 +249,17 @@ print(f2(2, 3))
 #
 text = "the quick brown fox jumps over the lazy dog the fox"
 counts = {}
-
+words = text.lower().split()
+for word in words:
+    if word in counts:
+        counts[word] = counts[word] +1
+    else:
+        counts[word] = 1
+items = list(counts.items())      # 转成列表，才能排序
+items.sort(key=lambda x: x[1])
+#
+for word, count in items:
+    print(word, count)
 #   然后排序：
 #
 #   items = list(counts.items())      # 转成列表，才能排序
