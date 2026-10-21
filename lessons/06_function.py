@@ -180,11 +180,13 @@ print(counts2)
 def count_words(text):
     words = text.lower().split()
     counts = {}
+
     for word in words:
         if word in counts:
             counts[word] = counts[word] + 1
-    else:
-        counts[word] = 1
+        else:                          # ← 8 格，和 if 对齐
+            counts[word] = 1
+
     return counts
 #   然后：
 print(count_words("a b c"))
@@ -207,21 +209,20 @@ def show_scope():
     print(y)          # 能看见自己的
 
 show_scope()
-
 # 【猜 14】先猜再运行：
 #         print(y)
-#         我猜：
+#         我猜：我是一个全局变量
 #
 #         print(x)
-#         我猜：
+#         我猜：我是一个局部变量
 
 # 【练习 15】在函数里改全局变量会怎样？先猜再试：
 #
-#   def change():
-#       x = "被改了"
-#
-#   change()
-#   print(x)
+def change():
+    x = "被改了"
+
+change()
+print(x)
 #
 #   我猜：
 
@@ -233,23 +234,22 @@ show_scope()
 #
 #   普通函数：def add(a, b): return a + b
 #   lambda：  lambda a, b: a + b
-#
 # 参数在前，冒号，返回值在后（不用写 return）。
 
 # 【练习 16】下面两个等价，先各跑一次确认：
 #
-#   f1 = lambda a, b: a + b
-#   print(f1(2, 3))
+f1 = lambda a, b: a + b
+print(f1(2, 3))
 #
-#   def f2(a, b):
-#       return a + b
-#   print(f2(2, 3))
+def f2(a, b):
+   return a + b
+print(f2(2, 3))
 
 # 【练习 17】⭐ **第 5 课没做完的那一步：按词频从多到少排序**
 #
-#   text = "the quick brown fox jumps over the lazy dog the fox"
-#   counts = {...}                    ← 先用你的 count_words 算出来
-#
+text = "the quick brown fox jumps over the lazy dog the fox"
+counts = {}
+
 #   然后排序：
 #
 #   items = list(counts.items())      # 转成列表，才能排序
