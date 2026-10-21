@@ -50,14 +50,21 @@ print(greet("world"))
 
 # 【练习 2】写一个函数 add(a, b)，返回 a + b
 #           然后调用它打印 add(3, 5)
+def add(a,b):
+    return a + b
 
+print(add(3,5))
 # 【练习 3】写一个函数 square(n)，返回 n 的平方
 #           调用它打印 square(7)
-
+def square(n):
+    return n * n
+print(square(7))
 # 【练习 4】写一个函数 max_of_three(a, b, c)，返回三个数里最大的
 #           提示：可以用内置的 max(a, b, c) —— 但那就没意思了
 #           试试用 if 比较，或者 max(a, max(b, c))
-
+def max_of_three(a,b,c):
+    return max(a,max(b,c))
+print(max_of_three(1,2,3))
 
 # ============================================================
 # 2. ⭐ return 和 print 不是一回事（本节重点）
@@ -82,17 +89,19 @@ print(add_return(2, 3))       # 我猜输出：
 #         x = add_print(2, 3)
 #         print(x)
 #
-#         我猜 x 是：
+#         我猜 x 是：None
 
 # 【练习 7】把下面的「打印版」改成「返回版」：
 #
 #   def area(w, h):
 #       print(w * h)
-#
+def area(w,h):
+    return w*h
+print(area(3,4))
 #   改完之后，用 print(area(3, 4)) 打印出来，应该是 12
 
 # 【猜 8】一个函数里**没有 return**，那它返回什么？
-#         我猜：
+#         我猜：None
 
 
 # ============================================================
@@ -103,20 +112,21 @@ def intro(name, age=18, city="beijing"):
     return f"{name}, {age}岁, 来自{city}"
 
 # 【猜 9】先猜再运行：
-#         print(intro("orange"))                      我猜：
-#         print(intro("orange", 25))                  我猜：
-#         print(intro("orange", city="shanghai"))     我猜：
+print(intro("orange"))                      
+print(intro("orange", 25))                  
+print(intro("orange", city="shanghai"))     
 
 # 【练习 10】给下面的函数加一个默认参数 prefix="Hi"，
 #            不传的时候用 "Hi"，传了就用传的
-#
-#   def hello(name):
-#       return f"... {name}"
-
+def hello(name,prefix="Hi "):
+  return f"{prefix}{name}"
+print(hello("orange"))
+print(hello("orange", "Hello "))
+print(hello("orange", prefix="Yo "))
 # 【练习 11】调用 intro 时用**关键字参数**，故意把顺序倒过来：
 #            intro(city="guangzhou", name="bob")
 #            看看能不能跑
-
+print(intro(city="guangzhou", name="bob"))
 
 # ============================================================
 # 4. 为什么要函数（这节不讲语法，讲动机）
@@ -129,7 +139,37 @@ def intro(name, age=18, city="beijing"):
 #   t1 = "a b a"
 #   t2 = "x y x z"
 #   t3 = "hello hello world"
-#
+# 第 1 遍
+t1 = "a b a"
+words1 = t1.lower().split()
+counts1 = {}
+for word in words1:
+    if word in counts1:
+        counts1[word] = counts1[word] + 1
+    else:
+        counts1[word] = 1
+print(counts1)
+
+# 第 3 遍
+t3 = "hello hello world"
+words3 = t3.lower().split()
+counts3 = {}
+for word in words3:
+    if word in counts3:
+        counts3[word] = counts3[word] + 1
+    else:
+        counts3[word] = 1
+print(counts3)
+# 第 3 遍
+t2 = "x y x z"
+words2 = t2.lower().split()
+counts2 = {}
+for word in words2:
+    if word in counts2:
+        counts2[word] = counts2[word] + 1
+    else:
+        counts2[word] = 1
+print(counts2)
 #            ⚠️ 写的时候体会一下：三遍有多烦？变量名会不会打架？
 
 # 【练习 13】用函数重写：
@@ -137,15 +177,23 @@ def intro(name, age=18, city="beijing"):
 #   def count_words(text):
 #       # 里面就是你的词频统计逻辑
 #       return counts
-#
+def count_words(text):
+    words = text.lower().split()
+    counts = {}
+    for word in words:
+        if word in counts:
+            counts[word] = counts[word] + 1
+    else:
+        counts[word] = 1
+    return counts
 #   然后：
-#   print(count_words(t1))
-#   print(count_words(t2))
-#   print(count_words(t3))
+print(count_words("a b c"))
+print(count_words("x y x z"))
+print(count_words("hello hello world"))
 #
 #           体会一下：**同样的逻辑，只写一次。**
 #           这就是函数的全部价值。
-
+print("XXXXXXXXXX")
 
 # ============================================================
 # 5. 作用域：函数里的变量，外面看不见
