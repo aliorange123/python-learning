@@ -263,6 +263,10 @@ for word, count in items:
 #   然后排序：
 #
 #   items = list(counts.items())      # 转成列表，才能排序
+def top_words(counts, n=5):                        # ① 定义函数，n 默认 5
+    items = list(counts.items())                   # ② 字典 → 列表
+    items.sort(key=lambda x: x[1], reverse=True)   # ③ 按次数从大到小排
+    return items[:n]                               # ④ 取前 n 个，交回去
 #   items.sort(key=lambda x: x[1], reverse=True)
 #
 #   for word, count in items:
@@ -288,16 +292,18 @@ for word, count in items:
 
 # 【练习 19】写两个函数：
 #
-#   def count_words(text):
-#       """返回 {词: 次数} 的字典"""          ← 文档字符串，用三引号
-#
+# def count_words(text):
+#       """返回 {词: 次数} 的字典"""          ← 文档字符串，用三引号 
 #   def top_words(counts, n=5):
 #       """返回出现次数最多的前 n 个词，按次数从多到少"""
-#
+#def top_words(counts, n=5):                        # ① 定义函数，n 默认 5
+    items = list(counts.items())                   # ② 字典 → 列表
+    items.sort(key=lambda x: x[1], reverse=True)   # ③ 按次数从大到小排
+    return items[:n]                               # ④ 取前 n 个，交回去
 #   然后：
-#   counts = count_words("the quick brown fox jumps over the lazy dog the fox")
-#   print(top_words(counts))
-#   print(top_words(counts, 3))
+counts = count_words("the quick brown fox jumps over the lazy dog the fox")
+print(top_words(counts))
+print(top_words(counts, 3))
 #
 #   ⚠️ top_words 里要用 sorted 或 sort + lambda
 
