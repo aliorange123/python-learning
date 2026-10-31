@@ -15,24 +15,45 @@
 # 1. 写一个函数 add(a, b)，返回 a + b
 #    然后调用它，打印 add(3, 5)
 #    期望输出：8
-
-
+def add(a,b):
+    return a + b
+print(add(3,5))
 # 2. 写一个函数 is_even(n)，返回 True（偶数）或 False（奇数）
 #    然后打印 is_even(4) 和 is_even(7)
 #    期望输出：True 和 False
-
+def is_even(n):
+    if n % 2 ==0:
+        return True
+    else:
+        return False
+print(is_even(4))
+print(is_even(7))
 
 # 3. 写一个函数 max_of_three(a, b, c)，返回三个数里最大的
 #    然后打印 max_of_three(3, 9, 5)
 #    期望输出：9
 #    （用 if 比较或者用内置 max 都行）
-
+def max_of_three(a,b,c):
+    return max(a,max(b,c))
+print(max_of_three(3,9,5))
 
 # 4. 写一个函数 count_words(text)，返回一个字典 {词: 次数}
 #    要求：先转小写，再按空格切分，然后统计
 #    然后打印 count_words("a b a")
 #    期望输出：{'a': 2, 'b': 1}
+def count_words(text):
+    words = text.lower().split()
+    counts = {}
 
+    for w in words:
+        if w in counts:
+            counts[w] = counts[w] + 1
+        else:
+            counts[w] = 1
+    
+    return counts
 
+print(count_words("a b c"))
 # 5. 用第 4 题的函数，统计 "a b a c b a" 并打印结果
 #    期望输出：{'a': 3, 'b': 2, 'c': 1}
+print(count_words("a b a c b a"))
